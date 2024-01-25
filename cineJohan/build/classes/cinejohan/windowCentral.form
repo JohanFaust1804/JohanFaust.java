@@ -92,9 +92,9 @@
                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jPanel2" max="32767" attributes="0"/>
-                      <Component id="jPanel3" pref="0" max="32767" attributes="0"/>
+                      <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <EmptySpace pref="47" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -136,10 +136,10 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="buttonNewentry" min="-2" max="-2" attributes="0"/>
+                                      <Component id="buttonNewSell" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       <Component id="buttonOcupation" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="32" max="32767" attributes="0"/>
+                                      <EmptySpace pref="45" max="32767" attributes="0"/>
                                       <Component id="buttonEmpty" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Component id="buttonIncome" min="-2" max="-2" attributes="0"/>
@@ -167,7 +167,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="buttonNewentry" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonNewSell" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonOcupation" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonEmpty" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="buttonIncome" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -195,6 +195,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TextFieldMovie">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldMovieActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonChangesPrincipal">
               <Properties>
@@ -207,15 +210,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonChangesPrincipalActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="buttonNewentry">
+            <Component class="javax.swing.JButton" name="buttonNewSell">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="13" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="NEW ENTRY"/>
+                <Property name="text" type="java.lang.String" value="NEW SELL"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNewentryActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonNewSellActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonOcupation">
@@ -223,7 +226,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="13" style="3"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="OCUPATION"/>
+                <Property name="text" type="java.lang.String" value="% OCUPATION"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonOcupationActionPerformed"/>
@@ -330,6 +333,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="TextFieldMovieSecond">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextFieldMovieSecondActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonChangesSecond">
               <Properties>
@@ -357,6 +363,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="OCUPATION"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonOcupation2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="buttonEmpty2">
               <Properties>

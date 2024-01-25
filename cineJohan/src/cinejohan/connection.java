@@ -30,10 +30,10 @@ Connection con;
             Class.forName(Driver); 
             con = (Connection) DriverManager.getConnection(url, user, pass);
             if(con != null){
-                System.out.println("Conexión Establecida");
+                JOptionPane.showMessageDialog(null, "Conexión Establecida");
             }
         }catch(ClassNotFoundException | SQLException e){
-            System.out.println("Error de Conexión: "+e);
+            JOptionPane.showMessageDialog(null, "Error de Conexión: "+e);
         }
     }
 }  

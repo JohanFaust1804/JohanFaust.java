@@ -10,18 +10,16 @@ import javax.swing.JOptionPane;
 
 
 public class windowCentral extends javax.swing.JFrame {
-    roomCine roomPrincipal;
-    cliente roomSecond;
     connection conection = new connection();
-  
+    roomCine roomPrimary = new roomCine();
+    roomCine roomSecundary = new roomCine();
     public windowCentral() {
         initComponents();
         this.conection.conectar();
-        roomCine roomPrincipal = new roomCine();
-        roomCine roomSecundary = new roomCine();
         
-        roomPrincipal.setCapacity(500);
-        roomPrincipal.setEntryPrice(8.0);
+        
+        roomPrimary.setCapacity(500);
+        roomPrimary.setEntryPrice(8.0);
         
         roomSecundary.setCapacity(300);
         roomSecundary.setEntryPrice(6.0);
@@ -48,7 +46,7 @@ public class windowCentral extends javax.swing.JFrame {
         labMovie = new javax.swing.JLabel();
         TextFieldMovie = new javax.swing.JTextField();
         buttonChangesPrincipal = new javax.swing.JButton();
-        buttonNewentry = new javax.swing.JButton();
+        buttonNewSell = new javax.swing.JButton();
         buttonOcupation = new javax.swing.JButton();
         buttonEmpty = new javax.swing.JButton();
         buttonIncome = new javax.swing.JButton();
@@ -91,6 +89,12 @@ public class windowCentral extends javax.swing.JFrame {
         labMovie.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
         labMovie.setText("Movie");
 
+        TextFieldMovie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldMovieActionPerformed(evt);
+            }
+        });
+
         buttonChangesPrincipal.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
         buttonChangesPrincipal.setText("CHANGES");
         buttonChangesPrincipal.addActionListener(new java.awt.event.ActionListener() {
@@ -99,16 +103,16 @@ public class windowCentral extends javax.swing.JFrame {
             }
         });
 
-        buttonNewentry.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
-        buttonNewentry.setText("NEW ENTRY");
-        buttonNewentry.addActionListener(new java.awt.event.ActionListener() {
+        buttonNewSell.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
+        buttonNewSell.setText("NEW SELL");
+        buttonNewSell.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonNewentryActionPerformed(evt);
+                buttonNewSellActionPerformed(evt);
             }
         });
 
         buttonOcupation.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
-        buttonOcupation.setText("OCUPATION");
+        buttonOcupation.setText("% OCUPATION");
         buttonOcupation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonOcupationActionPerformed(evt);
@@ -137,10 +141,10 @@ public class windowCentral extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(buttonNewentry)
+                                .addComponent(buttonNewSell)
                                 .addGap(32, 32, 32)
                                 .addComponent(buttonOcupation)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                                 .addComponent(buttonEmpty)
                                 .addGap(38, 38, 38)
                                 .addComponent(buttonIncome))
@@ -161,7 +165,7 @@ public class windowCentral extends javax.swing.JFrame {
                     .addComponent(buttonChangesPrincipal))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonNewentry)
+                    .addComponent(buttonNewSell)
                     .addComponent(buttonOcupation)
                     .addComponent(buttonEmpty)
                     .addComponent(buttonIncome))
@@ -176,6 +180,12 @@ public class windowCentral extends javax.swing.JFrame {
         labMovie1.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
         labMovie1.setText("Movie");
 
+        TextFieldMovieSecond.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextFieldMovieSecondActionPerformed(evt);
+            }
+        });
+
         buttonChangesSecond.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
         buttonChangesSecond.setText("CHANGES");
         buttonChangesSecond.addActionListener(new java.awt.event.ActionListener() {
@@ -189,6 +199,11 @@ public class windowCentral extends javax.swing.JFrame {
 
         buttonOcupation2.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
         buttonOcupation2.setText("OCUPATION");
+        buttonOcupation2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonOcupation2ActionPerformed(evt);
+            }
+        });
 
         buttonEmpty2.setFont(new java.awt.Font("Segoe UI", 3, 13)); // NOI18N
         buttonEmpty2.setText("EMPTY");
@@ -250,8 +265,8 @@ public class windowCentral extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(62, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,23 +293,24 @@ public class windowCentral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void buttonOcupationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOcupationActionPerformed
     String info;
-    
-    info = "Room principal\n";
-    info = "Movie"+roomPrincipal.getTitleMovie()+"\n";
-    info = "Capacity"+roomPrincipal.getTitleMovie()+"\n";
-    info = "Seat busy"+roomPrincipal.getSeatBusy()+"\n";
-    info = "Cost entry to the movie"+roomPrincipal.getEntryPrice()+"\n";
+    info = "room central";
+    info = "Movie"+roomPrimary.getTitleMovie()+"\n";
+    info = "Capacity"+roomPrimary.getCapacity()+"\n";
+    info = "Seat busy"+roomPrimary.getSeatBusy()+"\n";
+    info = "Seat free"+roomPrimary.getFree()+"\n";
+    info = "Parcentage"+roomPrimary.getPorcentaje()+"\n";
+        JOptionPane.showMessageDialog(null, "las caracteristicas es :"+ info);
     }//GEN-LAST:event_buttonOcupationActionPerformed
 
     private void buttonChangesPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonChangesPrincipalActionPerformed
        String title;
        title= JOptionPane.showInputDialog(null, "Enter the title of one movie : ");
-       roomPrincipal.setTitleMovie(title);
+       roomPrimary.setTitleMovie(title);
        TextFieldMovie.setText(title);
         
     }//GEN-LAST:event_buttonChangesPrincipalActionPerformed
@@ -303,9 +319,21 @@ public class windowCentral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonChangesSecondActionPerformed
 
-    private void buttonNewentryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNewentryActionPerformed
-    roomPrincipal.entraUno();
-    }//GEN-LAST:event_buttonNewentryActionPerformed
+    private void buttonNewSellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNewSellActionPerformed
+    roomPrimary.entraUno();
+    }//GEN-LAST:event_buttonNewSellActionPerformed
+
+    private void buttonOcupation2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOcupation2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonOcupation2ActionPerformed
+
+    private void TextFieldMovieSecondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldMovieSecondActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextFieldMovieSecondActionPerformed
+
+    private void TextFieldMovieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldMovieActionPerformed
+       
+    }//GEN-LAST:event_TextFieldMovieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,7 +380,7 @@ public class windowCentral extends javax.swing.JFrame {
     private javax.swing.JButton buttonEmpty2;
     private javax.swing.JButton buttonIncome;
     private javax.swing.JButton buttonIncome2;
-    private javax.swing.JButton buttonNewentry;
+    private javax.swing.JButton buttonNewSell;
     private javax.swing.JButton buttonNewentry2;
     private javax.swing.JButton buttonOcupation;
     private javax.swing.JButton buttonOcupation2;

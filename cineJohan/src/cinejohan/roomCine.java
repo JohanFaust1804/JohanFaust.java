@@ -19,11 +19,11 @@ public class roomCine {
    
 
     public roomCine(int idPrincipal, int capacity, int seatBusy, String titleMovie, double entryPrice) {
-        this.idPrincipal = idPrincipal;
-        this.capacity = capacity;
-        this.seatBusy = seatBusy;
-        this.titleMovie = titleMovie;
-        this.entryPrice = entryPrice;
+        this.idPrincipal = idPrincipal ;
+        this.capacity = capacity = 500;
+        this.seatBusy = seatBusy = 0;
+        this.titleMovie = titleMovie = "";
+        this.entryPrice = entryPrice= 5.0;
     }
 
     public double getEntryPrice() {
@@ -65,9 +65,37 @@ public class roomCine {
     public void setTitleMovie(String titleMovie) {
         this.titleMovie = titleMovie;
     }
-
+    //Método setLibres
+    public void setFree(int free) {
+    int ocu;
+    ocu = capacity - free;
+    seatBusy = ocu;
+    }
+    public int getFree() {
+    int free;
+    free = (capacity - seatBusy);
+    return free;
+    }
+    
+    public double getPorcentaje(){
+    double por;
+    por = (double) seatBusy / (double) capacity * 100.0;
+    return por;
+    }
+    
+    public double getIncomes(){
+    double incomes; 
+    incomes = capacity * entryPrice;
+    return incomes;
+    }
+    
+    public void vaciar(){
+    seatBusy = 0;
+    titleMovie = "";
+    }
+    
     public void entraUno() {
-       
+       seatBusy++;
     }
 
 }

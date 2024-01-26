@@ -6,7 +6,7 @@ package cinejohan;
 
 
 public class roomCine {
-    private int idPrincipal;
+    private int idMovie;
     private int capacity;
     private int seatBusy; 
     private String titleMovie; 
@@ -18,8 +18,8 @@ public class roomCine {
 
    
 
-    public roomCine(int idPrincipal, int capacity, int seatBusy, String titleMovie, double entryPrice) {
-        this.idPrincipal = idPrincipal ;
+    public roomCine(int idMovie, int capacity, int seatBusy, String titleMovie, double entryPrice) {
+        this.idMovie = idMovie ;
         this.capacity = capacity = 500;
         this.seatBusy = seatBusy = 0;
         this.titleMovie = titleMovie = "";
@@ -34,12 +34,12 @@ public class roomCine {
         this.entryPrice = entryPrice;
     }
 
-    public int getIdPrincipal() {
-        return idPrincipal;
+    public int getIdMovie() {
+        return idMovie;
     }
 
-    public void setIdPrincipal(int idPrincipal) {
-        this.idPrincipal = idPrincipal;
+    public void setIdPelicula(int idPrincipal) {
+        this.idMovie = idMovie;
     }
 
     public int getCapacity() {
